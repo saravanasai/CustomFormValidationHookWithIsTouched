@@ -11,5 +11,8 @@ export default function validate(values, isTouched) {
   } else if (isTouched.password && values.password.length < 8) {
     errors.password = "Password must be 8 or more characters"
   }
+  if (isTouched.user && values.user == 0) {
+    errors.user = "Choose User Type"
+  }
   return errors
 }

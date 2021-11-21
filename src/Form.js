@@ -5,7 +5,8 @@ import validate from "./LoginFormValidationRules"
 const Form = () => {
   const formValues = {
     email: "",
-    password: ""
+    password: "",
+    user: 0
   }
 
   const {
@@ -66,6 +67,28 @@ const Form = () => {
                   <p className="help is-danger">
                     {errors.password}
                   </p>}
+              </div>
+              <div className="field">
+                <label className="label">User Type</label>
+                <div className="control">
+                  <div class="select">
+                    <select
+                      name="user"
+                      value={values.user}
+                      onFocus={onFocus}
+                      onBlur={onBlur}
+                      onChange={handleChange}
+                    >
+                      <option value="0">choose User</option>
+                      <option value="1">Guest</option>
+                      <option value="2">Admin</option>
+                    </select>
+                  </div>
+                  {errors.user &&
+                    <p className="help is-danger">
+                      {errors.user}
+                    </p>}
+                </div>
               </div>
               <button
                 type="submit"
