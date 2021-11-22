@@ -49,6 +49,7 @@ const useForm = (callback, validate, formValues) => {
     setIsSubmitting(false)
     setIsTouched(isTouched => ({ ...isTouched, [event.target.name]: true }))
     setErrors(validate(values, isTouched))
+    chechFormFieldMatchs()
   }
   return {
     handleChange,
